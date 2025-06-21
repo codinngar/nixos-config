@@ -74,14 +74,15 @@
     pulse.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  # Programs
+  programs.zsh.enable = true;
 
   # Users
   users.users.mahmoud = {
     isNormalUser = true;
     description = "Mahmoud";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages

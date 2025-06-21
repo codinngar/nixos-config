@@ -14,10 +14,6 @@
 
   programs.zsh = {
     enable = true;
-    enableCompletions = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
@@ -37,10 +33,8 @@
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       vscodevim.vim
-      yzhang.markdown-all-in-one
     ];
   };
 
@@ -50,6 +44,7 @@
       font-size = 14;
       window-padding-x = 20;
       window-padding-y = 20;
+      font-family = "JetBrainsMono Nerd Font";
     };
   };
 
