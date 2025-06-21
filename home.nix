@@ -16,6 +16,10 @@
     enable = true;
     settings = {
       font-size = 14;
+      theme = "Adwaita Dark";
+      background = "#10002b";
+      window-padding-x = 20;
+      window-padding-y = 20;
     };
   };
 
