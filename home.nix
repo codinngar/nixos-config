@@ -8,7 +8,6 @@ in
 
     home.packages = with pkgs; [
       google-chrome
-      nerd-fonts.jetbrains-mono
     ];
 
     home.file = {
