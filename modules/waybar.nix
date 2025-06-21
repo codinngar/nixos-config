@@ -96,7 +96,7 @@
 }
   '';
 
-  home.file."~/.config/waybar/style.css".text = ''
+  programs.waybar.style = ''
 * {
   font-family: "JetBrainsMonoNerdFont";
   font-weight: 600;
