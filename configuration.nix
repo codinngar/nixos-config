@@ -68,6 +68,7 @@
     inter
     noto-fonts
     noto-fonts-emoji
+    font-awesome
     nerd-fonts.jetbrains-mono
   ];
 
