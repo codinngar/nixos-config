@@ -28,6 +28,26 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Opengl
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  # Nvidia
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    nvidiaSettings = true;
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
+
   # Desktop
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
