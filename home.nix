@@ -12,6 +12,38 @@
   home.sessionVariables = {
   };
 
+  programs.zsh = {
+    enable = true;
+    enableCompletions = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "robbyrussell";
+    };
+  };
+
+  programs.vim = {
+    enable = true;
+    settings = {
+      expandtab = true;
+      shiftwidth = 4;
+      tabstop = 4;
+      number = true;
+    };
+  };
+
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      dracula-theme.theme-dracula
+      vscodevim.vim
+      yzhang.markdown-all-in-one
+    ];
+  };
+
   programs.ghostty = {
     enable = true;
     settings = {
