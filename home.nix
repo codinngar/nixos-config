@@ -1,31 +1,27 @@
 { config, pkgs, ... }:
 
-{
-  imports = [
-    ./modules/git.nix
-    ./modules/ssh.nix
-    ./modules/zsh.nix
-    ./modules/vim.nix
-    ./modules/vscode.nix
-    ./modules/ghostty.nix
-  ];
+let
+  modules = builtins.attrNames (builtins.readDir ./modules);
+in
+  {
+    imports = map (name: ./modules/${name}) modules;
 
-  home.packages = with pkgs; [
-    google-chrome
-    nerd-fonts.jetbrains-mono
-  ];
+    home.packages = with pkgs; [
+      google-chrome
+      nerd-fonts.jetbrains-mono
+    ];
 
-  home.file = {
-  };
+    home.file = {
+    };
 
-  home.sessionVariables = {
-  };
+    home.sessionVariables = {
+    };
 
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true;
 
-  home.username = "mahmoud";
-  home.homeDirectory = "/home/mahmoud";
-  home.stateVersion = "25.05";
-}
+    home.username = "mahmoud";
+    home.homeDirectory = "/home/mahmoud";
+    home.stateVersion = "25.05";
+  }
