@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     google-chrome
-    ghostty
     nerd-fonts.jetbrains-mono
   ];
 
@@ -11,6 +10,13 @@
   };
 
   home.sessionVariables = {
+  };
+
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      font-size = 14;
+    };
   };
 
   programs.ssh = {
