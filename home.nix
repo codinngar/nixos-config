@@ -10,6 +10,7 @@ in
     # Packages
     home.packages = with pkgs; [
       google-chrome
+      hyprshot
     ];
 
     # Config files

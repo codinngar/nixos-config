@@ -157,7 +157,7 @@
 
         "$mainMod, end, exec, hyprlock"
 
-        "$mainMod, P, exec, ~/.config/rofi/scripts/power-menu.sh"
+        "$mainMod, P, exec, power-menu"
       ];
 
       bindm = [
