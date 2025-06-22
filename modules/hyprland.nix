@@ -5,110 +5,54 @@
     enable = true;
     xwayland.enable = true;
 
+    settings = {
+      "$terminal" = "ghostty";
+      "$menu" = "rofi -show drun";
+
+      monitor = ",preferred,auto,auto";
+      exec-once = [ "hyprpaper" "waybar" ];
+      env = [ "XCURSOR_SIZE,24" "HYPRCURSOR_SIZE,24" ];
+
+      general = {
+        gaps_in = 10;
+        gaps_out = 20;
+        border_size = 1;
+        resize_on_border = true;
+        allow_tearing = false;
+        layout = "master";
+        "col.active_border" = "rgb(000000)";
+        "col.inactive_border" = "rgb(000000)";
+      };
+
+      decoration = {
+        rounding = 10;
+        rounding_power = 2;
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
+
+        shadow = {
+          enabled = false;
+          range = 4;
+          render_power = 3;
+          color = "rgba(1a1a1aee)";
+        };
+
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+          vibrancy = 0.1696;
+        };
+      };
+    };
+
     extraConfig = ''
-monitor=,preferred,auto,auto
-
-
-###################
-### MY PROGRAMS ###
-###################
-
-# See https://wiki.hyprland.org/Configuring/Keywords/
-
-# Set programs that you use
-$terminal = ghostty
-$menu = rofi -show drun
-
-
-#################
-### AUTOSTART ###
-#################
-
-# Autostart necessary processes (like notifications daemons, status bars, etc.)
-# Or execute your favorite apps at launch like this:
-
-# exec-once = $terminal
-# exec-once = nm-applet &
-exec-once = hyprpaper & waybar
-
-
-#############################
-### ENVIRONMENT VARIABLES ###
-#############################
-
-# See https://wiki.hyprland.org/Configuring/Environment-variables/
-
-env = XCURSOR_SIZE,24
-env = HYPRCURSOR_SIZE,24
-
-
-###################
-### PERMISSIONS ###
-###################
-
-# See https://wiki.hyprland.org/Configuring/Permissions/
-# Please note permission changes here require a Hyprland restart and are not applied on-the-fly
-# for security reasons
-
-# ecosystem {
-#   enforce_permissions = 1
-# }
-
-# permission = /usr/(bin|local/bin)/grim, screencopy, allow
-# permission = /usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland, screencopy, allow
-# permission = /usr/(bin|local/bin)/hyprpm, plugin, allow
-
-
-#####################
-### LOOK AND FEEL ###
-#####################
-
-# Refer to https://wiki.hyprland.org/Configuring/Variables/
-
-# https://wiki.hyprland.org/Configuring/Variables/#general
-general {
-    gaps_in = 10
-    gaps_out = 20
-
-    border_size = 1
-
-    # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-    col.active_border = rgb(000000)
-    col.inactive_border = rgb(000000)
-
-    # Set to true enable resizing windows by clicking and dragging on borders and gaps
-    resize_on_border = true
-
-    # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
-    allow_tearing = false
-
-    layout = master
-}
-
-# https://wiki.hyprland.org/Configuring/Variables/#decoration
 decoration {
-    rounding = 10
-    rounding_power = 2
 
     # Change transparency of focused and unfocused windows
-    active_opacity = 1.0
-    inactive_opacity = 1.0
 
-    shadow {
-        enabled = false
-        range = 4
-        render_power = 3
-        color = rgba(1a1a1aee)
-    }
 
     # https://wiki.hyprland.org/Configuring/Variables/#blur
-    blur {
-        enabled = true
-        size = 3
-        passes = 1
-
-        vibrancy = 0.1696
-    }
 }
 
 # https://wiki.hyprland.org/Configuring/Variables/#animations

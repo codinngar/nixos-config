@@ -4,18 +4,23 @@ let
   modules = builtins.attrNames (builtins.readDir ./modules);
 in
   {
+    # Import all modules
     imports = map (name: ./modules/${name}) modules;
 
+    # Packages
     home.packages = with pkgs; [
       google-chrome
     ];
 
+    # Config files
     home.file = {
     };
 
+    # Environment variables
     home.sessionVariables = {
     };
 
+    # Cursor
     home.pointerCursor = {
       gtk.enable = true;
       x11.enable = true;
@@ -24,26 +29,22 @@ in
       size = 16;
     };
 
+    # Gtk
     gtk = {
       enable = true;
-      theme = {
-        package = pkgs.whitesur-gtk-theme;
-        name = "WhiteSur-Light";
-      };
-      iconTheme = {
-        package = pkgs.whitesur-icon-theme;
-        name = "WhiteSur";
-      };
       font = {
         name = "Inter";
         size = 12;
       };
     };
 
-    programs.home-manager.enable = true;
-
+    # Allow unfree
     nixpkgs.config.allowUnfree = true;
 
+    # Enable home-manager
+    programs.home-manager.enable = true;
+
+    # Home info
     home.username = "mahmoud";
     home.homeDirectory = "/home/mahmoud";
     home.stateVersion = "25.05";
