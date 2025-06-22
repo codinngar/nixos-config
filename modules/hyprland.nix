@@ -76,7 +76,6 @@
         ];
       };
 
-
       dwindle = {
         pseudotile = true;
         preserve_split = true;
@@ -152,6 +151,11 @@
 
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+
+        ", PRINT, exec, hyprshot -m region"
+        "SHIFT, PRINT, exec, hyprshot -m output"
+
+        "$mainMod, end, exec, hyprlock"
       ];
 
       bindm = [
@@ -160,45 +164,25 @@
       ];
 
       bindel = [
-        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-        ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+      ];
+
+      bindl = [
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPause, exec, playerctl play-pause"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPrev, exec, playerctl previous"
+      ];
+
+      windowrule = [
+        "suppressevent maximize, class:.*"
+        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
     };
-
-    extraConfig = ''
-bindl = , XF86AudioNext, exec, playerctl next
-bindl = , XF86AudioPause, exec, playerctl play-pause
-bindl = , XF86AudioPlay, exec, playerctl play-pause
-bindl = , XF86AudioPrev, exec, playerctl previous
-
-bind = , PRINT, exec, hyprshot -m region
-bind = SHIFT, PRINT, exec, hyprshot -m output
-
-bind = $mainMod, end, exec, hyprlock
-
-
-##############################
-### WINDOWS AND WORKSPACES ###
-##############################
-
-# See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-# See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
-
-# Example windowrule
-# windowrule = float,class:^(kitty)$,title:^(kitty)$
-
-# Ignore maximize requests from apps. You'll probably like this.
-windowrule = suppressevent maximize, class:.*
-
-# Fix some dragging issues with XWayland
-windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
-
-# windowrule = bordersize 0, floating:0
-# windowrule = bordersize 2, floating:1
-    '';
   };
 }
