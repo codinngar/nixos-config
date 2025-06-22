@@ -3,6 +3,49 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
+  # Packages
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    wget
+    curl
+    nodejs_24
+    brightnessctl
+  ];
+
+  # Programs
+  programs.zsh.enable = true;
+
+  # Fonts
+  fonts.packages = with pkgs; [
+    inter
+    noto-fonts
+    noto-fonts-emoji
+    font-awesome
+    nerd-fonts.jetbrains-mono
+  ];
+
+  # Users
+  users.users.mahmoud = {
+    isNormalUser = true;
+    description = "Mahmoud";
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
+  };
+
+  # Gnome
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -50,29 +93,6 @@
     };
   };
 
-  # Desktop
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
-
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    inter
-    noto-fonts
-    noto-fonts-emoji
-    font-awesome
-    nerd-fonts.jetbrains-mono
-  ];
-
-
   # Keymap
   services.xserver.xkb = {
     layout = "us";
@@ -92,28 +112,8 @@
     pulse.enable = true;
   };
 
-  # Programs
-  programs.zsh.enable = true;
-
-  # Users
-  users.users.mahmoud = {
-    isNormalUser = true;
-    description = "Mahmoud";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Packages
-  environment.systemPackages = with pkgs; [
-    vim
-    git
-    wget
-    curl
-    brightnessctl
-  ];
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

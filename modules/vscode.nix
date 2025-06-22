@@ -6,8 +6,8 @@
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
-        dbaeumer.vscode-eslint
         esbenp.prettier-vscode
+        dbaeumer.vscode-eslint
         christian-kohler.path-intellisense
       ];
     };
