@@ -7,7 +7,7 @@
 
     settings = {
       "$terminal" = "ghostty";
-      "$menu" = "rofi -show drun";
+      "$apps-menu" = "rofi -show drun";
 
       monitor = ",preferred,auto,auto";
       exec-once = [ "hyprpaper" "waybar" ];
@@ -116,7 +116,7 @@
         "$mainMod, C, killactive,"
         "$mainMod, V, togglefloating,"
         "$mainMod, Q, exit,"
-        "$mainMod, RETURN, exec, $menu"
+        "$mainMod, RETURN, exec, $apps-menu"
         "$mainMod, SPACE, exec, $terminal"
         
         "$mainMod, h, movefocus, l"
@@ -156,6 +156,8 @@
         "SHIFT, PRINT, exec, hyprshot -m output"
 
         "$mainMod, end, exec, hyprlock"
+
+        "$mainMod, P, exec, ~/.config/rofi/scripts/power-menu.sh"
       ];
 
       bindm = [
