@@ -112,6 +112,7 @@
     git
     wget
     curl
+    brightnessctl
   ];
 
   # Enable flakes
