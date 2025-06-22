@@ -10,6 +10,7 @@ in
 
       extraConfig = {
         show-icons = true;
+        display-drun = "";
       };
 
       theme = {

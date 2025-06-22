@@ -37,7 +37,7 @@
           format-icons = "";
           format-disconnected = " ";
           format-disabled = " ";
-          on-click-right = "/home/mahmoud/nixos-config/scripts/toggle_wifi.sh";
+          on-click-right = "/home/mahmoud/.nix-profile/bin/toggle-wifi";
         };
         backlight = {
           tooltip = false;
@@ -75,7 +75,7 @@
 
     style = ''
       * {
-        font-family: "JetBrainsMonoNerdFont";
+        font-family: "JetBrainsMono Nerd Font";
         font-weight: 600;
         font-size: 14px;
         border: none;
