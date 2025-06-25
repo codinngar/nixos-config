@@ -9,6 +9,7 @@ in
 
     # Packages
     home.packages = with pkgs; [
+      gcc
       lazygit
       postman
       obsidian
