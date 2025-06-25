@@ -16,12 +16,18 @@
   # Programs
   programs.zsh.enable = true;
 
+  # Services
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
+
   # Fonts
   fonts.packages = with pkgs; [
     inter
     noto-fonts
-    noto-fonts-emoji
     font-awesome
+    noto-fonts-emoji
     nerd-fonts.jetbrains-mono
   ];
 

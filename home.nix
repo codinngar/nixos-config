@@ -9,9 +9,10 @@ in
 
     # Packages
     home.packages = with pkgs; [
-      google-chrome
       obsidian
       hyprshot
+      dbeaver-bin
+      google-chrome
     ];
 
     # Config files
