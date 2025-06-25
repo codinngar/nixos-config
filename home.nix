@@ -9,6 +9,7 @@ in
 
     # Packages
     home.packages = with pkgs; [
+      lazygit
       obsidian
       hyprshot
       dbeaver-bin
