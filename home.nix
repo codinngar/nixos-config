@@ -12,9 +12,10 @@ in
       gcc
       lazygit
       postman
-      windsurf
       obsidian
       hyprshot
+      windsurf
+      code-cursor
       dbeaver-bin
       google-chrome
     ];
