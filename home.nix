@@ -18,6 +18,7 @@ in
       code-cursor
       dbeaver-bin
       google-chrome
+      jetbrains-toolbox
     ];
 
     # Config files
