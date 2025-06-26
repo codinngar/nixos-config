@@ -99,9 +99,6 @@
     variant = "";
   };
 
-  # Print
-  services.printing.enable = true;
-
   # Sound
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;

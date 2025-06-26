@@ -18,9 +18,7 @@ in
       dbeaver-bin
       google-chrome
       jetbrains.idea-community-bin
-      gnomeExtensions.user-themes
       gnomeExtensions.dash-to-dock
-      gnomeExtensions.blur-my-shell
     ];
 
     # Config files
@@ -29,25 +27,6 @@ in
 
     # Environment variables
     home.sessionVariables = {
-    };
-
-    # Cursor
-#   home.pointerCursor = {
-#     gtk.enable = true;
-#     x11.enable = true;
-#     package = pkgs.bibata-cursors;
-#     name = "Bibata-Modern-Classic";
-#     size = 24;
-#   };
-
-    # Gtk
-    gtk = {
-      enable = true;
-      cursorTheme = {
-        package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Classic";
-        size = 24;
-      };
     };
 
     # Allow unfree
