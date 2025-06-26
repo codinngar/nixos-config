@@ -12,6 +12,7 @@ in
       gcc
       lazygit
       postman
+      windsurf
       obsidian
       hyprshot
       dbeaver-bin
