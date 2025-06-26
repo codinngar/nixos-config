@@ -14,11 +14,13 @@ in
       postman
       obsidian
       hyprshot
-      windsurf
       code-cursor
       dbeaver-bin
       google-chrome
-      jetbrains-toolbox
+      jetbrains.idea-community-bin
+      gnomeExtensions.user-themes
+      gnomeExtensions.dash-to-dock
+      gnomeExtensions.blur-my-shell
     ];
 
     # Config files
@@ -30,20 +32,21 @@ in
     };
 
     # Cursor
-    home.pointerCursor = {
-      gtk.enable = true;
-      x11.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      size = 16;
-    };
+#   home.pointerCursor = {
+#     gtk.enable = true;
+#     x11.enable = true;
+#     package = pkgs.bibata-cursors;
+#     name = "Bibata-Modern-Classic";
+#     size = 24;
+#   };
 
     # Gtk
     gtk = {
       enable = true;
-      font = {
-        name = "Inter";
-        size = 12;
+      cursorTheme = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+        size = 24;
       };
     };
 

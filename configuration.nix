@@ -46,12 +46,6 @@
     desktopManager.gnome.enable = true;
   };
 
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
