@@ -16,10 +16,15 @@
   # Programs
   programs.zsh.enable = true;
 
-  # Services
+  # MySQL
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
+  };
+
+  # PostgreSQL
+  services.postgresql = {
+    enable = true;
   };
 
   # Fonts
