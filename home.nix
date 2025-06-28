@@ -16,6 +16,7 @@ in
       hyprshot
       code-cursor
       dbeaver-bin
+      libreoffice
       google-chrome
       jetbrains.idea-community-bin
       gnomeExtensions.dash-to-dock
