@@ -14,9 +14,11 @@ in
       postman
       obsidian
       hyprshot
+      nodejs_24
       code-cursor
       dbeaver-bin
       libreoffice
+      dotnet-sdk_9
       google-chrome
       jetbrains.idea-community-bin
       gnomeExtensions.dash-to-dock

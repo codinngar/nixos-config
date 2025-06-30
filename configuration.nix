@@ -9,7 +9,6 @@
     git
     wget
     curl
-    nodejs_24
     brightnessctl
   ];
 
@@ -50,6 +49,22 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
+
+  # Execluded gnome packages
+  environment.gnome.excludePackages = with pkgs; [
+    eog         # image viewer
+    epiphany    # web browser
+    simple-scan # document scanner
+    yelp        # help viewer
+    geary       # email client
+    seahorse    # password manager
+    gnome-contacts
+    gnome-logs
+    gnome-maps
+    gnome-weather
+    pkgs.gnome-tour
+    pkgs.gnome-connections
+  ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
