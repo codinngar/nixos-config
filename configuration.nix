@@ -52,12 +52,12 @@
 
   # Execluded gnome packages
   environment.gnome.excludePackages = with pkgs; [
-    eog         # image viewer
-    epiphany    # web browser
-    simple-scan # document scanner
-    yelp        # help viewer
-    geary       # email client
-    seahorse    # password manager
+    eog                     # image viewer
+    epiphany                # web browser
+    simple-scan             # document scanner
+    yelp                    # help viewer
+    geary                   # email client
+    seahorse                # password manager
     gnome-contacts
     gnome-logs
     gnome-maps
